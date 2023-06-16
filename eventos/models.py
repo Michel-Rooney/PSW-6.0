@@ -15,6 +15,8 @@ class Evento(models.Model):
     cor_principal = models.CharField(max_length=7)
     cor_secundaria = models.CharField(max_length=7)
     cor_fundo = models.CharField(max_length=7)
+
+    participantes = models.ManyToManyField(User, related_name="evento_participante", blank=True)
     
 
     def __str__(self):
